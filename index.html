@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+<!-- CDN Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Tailwind config -->
+   <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#f97316',
+          },
+        },
+      },
+    };
+  </script>
+<style>
+
+body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+  
+    nav{
+           box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    [data-aos] {
+      opacity: 0;
+      transition-property: opacity, transform;
+    }
+  </style>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white transition duration-300">
+
+   <nav class="px-6 py-4 bg-white text-gray-950 dark:bg-gray-800 dark:text-white shadow relative z-10"> 
+    <div class="flex justify-between items-center container mx-auto">
+      <div class="text-2xl font-bold dark:text-cyan-50">👩🏾‍💻 STELLA</div>
+
+
+      <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+        ☰
+      </button>
+
+      <!-- Links -->
+      <div id="nav-links" class="hidden md:flex gap-4 items-center">
+        <a href="#" class="hover:text-primary">Home</a>
+        <a href="#" class="hover:text-primary">About</a>
+        <a href="#" class="hover:text-primary">Services</a>
+        <a href="#" class="hover:text-primary">Projects</a>
+        <a href="#" class="hover:text-primary dark:bg-yellow-700 p-3 rounded-lg">Let's Chat</a>
+
+        
+        <button
+          id="theme-toggle"
+          class="ml-4 p-2 rounded-full border border-gray-500 dark:border-gray-400"
+        >
+          🌓
+        </button>
+      </div>
+    </div>
+
+<!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden mt-4 space-y-3 px-6 hidden">
+      <a href="#" class="block hover:text-primary">Home</a>
+      <a href="#" class="block hover:text-primary">About</a>
+      <a href="#" class="block hover:text-primary">Services</a>
+      <a href="#" class="block hover:text-primary">Projects</a>
+      <a href="#" class="block hover:text-primary">Let's Chat</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col md:flex-row items-center justify-between px-6 py-20 container mx-auto">
+    <!-- Text Content -->
+    <div class="md:w-1/2 space-y-6 text-center md:text-left" data-aos="fade-right">
+      <p class="uppercase tracking-widest text-blue-900 dark:text-cyan-50 font-extralight text-2xl font-serif">Hi! I'm Stella Wachira</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+       <span class="text-gray-900 dark:text-yellow-600">Software Developer.</span>
+      </h1>
+      <p class="text-gray-600 dark:text-gray-300 max-w-xl">
+        Designing and Developing user experiences that leap into electronic typesetting, remaining essentially unchanged.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4" data-aos="fade-up">
+        <a href="#" class="bg-blue-500 hover:bg-blue-800 dark:bg-yellow-700 text-white px-6 py-3 rounded-lg font-medium">Hire me</a>
+        <a href="#" class="border border-gray-500 dark:border-white text-gray-800 dark:text-white px-6 py-3 rounded-lg hover:bg-gray-200 dark:hover:bg-white dark:hover:text-black">Download CV</a>
+      </div>
+    </div>
+
+    <div class="md:w-1/2 mt-12 md:mt-0" data-aos="zoom-in">
+  
+  <img
+    src="./IMAGES/3.gif"
+    alt="Portfolio Visual "
+    class="w-full max-w-md mx-auto drop-shadow-lg rounded-xl block "
+  />
+
+  </div>
+
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400">
+    &copy; 2025 Stella Wachira. All rights reserved.
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+
+  <!-- Theme and Mobile Menu Toggle -->
+  <script>
+    const themeToggle = document.getElementById("theme-toggle");
+    const htmlElement = document.documentElement;
+
+    themeToggle?.addEventListener("click", () => {
+      htmlElement.classList.toggle("dark");
+    });
+
+    const menuBtn = document.getElementById("menu-btn");
+    const navLinks = document.getElementById("mobile-menu");
+
+    menuBtn?.addEventListener("click", () => {
+      navLinks.classList.toggle("hidden");
+    });
+  </script>
+</body>
+</html>
