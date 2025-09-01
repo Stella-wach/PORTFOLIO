@@ -3,144 +3,463 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Stella Wachira - Software Developer</title>
 
-<!-- CDN Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-<!-- AOS -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- AOS Animations -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./style.css">
+</head>
 
-  <!-- Tailwind config -->
-   <script>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-slate-900 text-gray-900 dark:text-white transition-all duration-500">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200/20 dark:border-gray-700/20"> 
+    <div class="flex justify-between items-center container mx-auto px-6 py-4">
+      <div class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
+        <i class="fas fa-code mr-2"></i>STELLA
+      </div>
+
+      <button id="menu-btn" class="md:hidden text-2xl focus:outline-none hover:text-blue-600 transition-colors">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <div id="nav-links" class="hidden md:flex gap-8 items-center">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-cyan-500 dark:to-purple-500 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+          Let's Connect
+        </a>
+        
+        <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
+          <i class="fas fa-moon dark:hidden text-gray-700"></i>
+          <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t border-gray-200/20 dark:border-gray-700/20 hidden">
+      <div class="px-6 py-4 space-y-4">
+        <a href="#home" class="mobile-nav-link">Home</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#skills" class="mobile-nav-link">Skills</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+        <button id="mobile-theme-toggle" class="w-full text-left py-2 text-gray-700 dark:text-gray-300">
+          <i class="fas fa-moon mr-2"></i>Toggle Theme
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+    <div class="container mx-auto">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+        
+        <!-- Text Content -->
+        <div class="lg:w-1/2 text-center lg:text-left space-y-8" data-aos="fade-right">
+          <div class="space-y-2">
+            <p class="text-blue-600 dark:text-cyan-400 font-medium tracking-wider uppercase text-sm">
+              Welcome to my world
+            </p>
+            <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
+              Hi! I'm <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">Stella</span>
+            </h1>
+            <h2 class="text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300">
+              Software Developer
+            </h2>
+          </div>
+          
+          <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl leading-relaxed">
+            I craft beautiful, responsive web experiences that bring ideas to life. 
+            Passionate about clean code, user-centered design, and cutting-edge technologies.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="200">
+            <a href="#projects" class="btn-primary">
+              <i class="fas fa-eye mr-2"></i>View My Work
+            </a>
+            <a href="#contact" class="btn-secondary">
+              <i class="fas fa-download mr-2"></i>Download CV
+            </a>
+          </div>
+          
+          <!-- Social Links -->
+          <div class="flex gap-6 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com/yourhandle" target="_blank" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:stella@example.com" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="lg:w-1/2 flex justify-center" data-aos="zoom-in" data-aos-delay="300">
+          <div class="relative">
+            <div class="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 p-1 animate-spin-slow">
+              <div class="w-full h-full rounded-full bg-white dark:bg-gray-900 flex items-center justify-center">
+                <img src="./IMAGES/3.gif" alt="Stella Wachira" class="w-72 h-72 lg:w-80 lg:h-80 rounded-full object-cover shadow-2xl" />
+              </div>
+            </div>
+            <!-- Floating Elements -->
+            <div class="absolute -top-4 -right-4 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center animate-bounce">
+              <i class="fas fa-code text-white"></i>
+            </div>
+            <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center animate-pulse">
+              <i class="fas fa-laptop-code text-white"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+    <div class="container mx-auto max-w-4xl">
+      <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16" data-aos="fade-up">
+        About <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Me</span>
+      </h2>
+
+      <div class="text-center space-y-8" data-aos="fade-up" data-aos-delay="200">
+        <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+          I'm <span class="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Stella Wachira</span>, 
+          a passionate web developer dedicated to building engaging, accessible, and performance-focused web applications.
+        </p>
+        
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto">
+          My journey in tech is driven by curiosity and a love for problem-solving. I specialize in creating seamless 
+          user experiences with clean, efficient code. Whether it's a complex web application or a simple landing page, 
+          I approach every project with attention to detail and a commitment to excellence.
+        </p>
+        
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto">
+          When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+          or mentoring fellow developers. I believe in the power of collaboration and continuous learning.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16" data-aos="fade-up" data-aos-delay="400">
+          <div class="stat-card">
+            <h3 class="text-3xl font-bold text-blue-600 dark:text-cyan-400 counter" data-target="50">0</h3>
+            <p class="text-gray-600 dark:text-gray-400">Projects Completed</p>
+          </div>
+          <div class="stat-card">
+            <h3 class="text-3xl font-bold text-purple-600 dark:text-purple-400 counter" data-target="2">0</h3>
+            <p class="text-gray-600 dark:text-gray-400">Years Experience</p>
+          </div>
+          <div class="stat-card">
+            <h3 class="text-3xl font-bold text-green-600 dark:text-green-400 counter" data-target="100">0</h3>
+            <p class="text-gray-600 dark:text-gray-400">Happy Clients</p>
+          </div>
+          <div class="stat-card">
+            <h3 class="text-3xl font-bold text-red-600 dark:text-red-400 counter" data-target="24">0</h3>
+            <p class="text-gray-600 dark:text-gray-400">Support Hours</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 px-6">
+    <div class="container mx-auto">
+      <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16" data-aos="fade-up">
+        My <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Skills</span>
+      </h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!-- Skill Cards -->
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fab fa-html5 text-orange-500"></i>
+          <h3>HTML5</h3>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fab fa-css3-alt text-blue-500"></i>
+          <h3>Tailwind CSS</h3>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fab fa-js-square text-yellow-500"></i>
+          <h3>JavaScript</h3>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+          <i class="fab fa-react text-cyan-400"></i>
+          <h3>React</h3>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+          <i class="fab fa-git-alt text-red-600"></i>
+          <h3>Git</h3>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+          <i class="fab fa-github text-gray-700 dark:text-white"></i>
+          <h3>GitHub</h3>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="700">
+          <i class="fas fa-mobile-alt text-purple-500"></i>
+          <h3>Responsive Design</h3>
+        </div>
+
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="800">
+          <i class="fas fa-code text-green-500"></i>
+          <h3>Clean Code</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 px-6 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+    <div class="container mx-auto">
+      <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16" data-aos="fade-up">
+        Featured <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
+      </h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project Cards -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image">
+            <img src="./IMAGES/project1.jpg" alt="E-Commerce Website" />
+            <div class="project-overlay">
+              <a href="#" class="project-btn">
+                <i class="fas fa-eye"></i>
+              </a>
+              <a href="#" class="project-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>E-Commerce Platform</h3>
+            <p>A full-featured online store with modern UI/UX, built with React and Tailwind CSS.</p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>Tailwind</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image">
+            <img src="./IMAGES/project2.jpg" alt="Portfolio Website" />
+            <div class="project-overlay">
+              <a href="#" class="project-btn">
+                <i class="fas fa-eye"></i>
+              </a>
+              <a href="#" class="project-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Creative Portfolio</h3>
+            <p>A stunning portfolio website with smooth animations and responsive design.</p>
+            <div class="project-tech">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>AOS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-image">
+            <img src="./IMAGES/project3.jpg" alt="Weather App" />
+            <div class="project-overlay">
+              <a href="#" class="project-btn">
+                <i class="fas fa-eye"></i>
+              </a>
+              <a href="#" class="project-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Weather Dashboard</h3>
+            <p>Real-time weather application with location-based forecasts and beautiful UI.</p>
+            <div class="project-tech">
+              <span>JavaScript</span>
+              <span>API</span>
+              <span>CSS3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+        <a href="https://github.com/yourusername" target="_blank" class="btn-secondary">
+          <i class="fab fa-github mr-2"></i>View All Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-6">
+    <div class="container mx-auto max-w-4xl">
+      <h2 class="text-4xl lg:text-5xl font-bold text-center mb-8" data-aos="fade-up">
+        Let's <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Connect</span>
+      </h2>
+      
+      <p class="text-center text-gray-600 dark:text-gray-400 mb-16 text-lg" data-aos="fade-up" data-aos-delay="100">
+        Have a project in mind? Let's discuss how we can bring your ideas to life!
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Info -->
+        <div class="space-y-8" data-aos="fade-right" data-aos-delay="200">
+          <h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
+          
+          <div class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p>stella@example.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-info">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h4>Phone</h4>
+              <p>+254 123 456 789</p>
+            </div>
+          </div>
+          
+          <div class="contact-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Location</h4>
+              <p>Nairobi, Kenya</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 pt-6">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com/yourhandle" target="_blank" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6" data-aos="fade-left" data-aos-delay="300">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="w-full btn-primary">
+            <i class="fas fa-paper-plane mr-2"></i>Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 px-6">
+    <div class="container mx-auto text-center">
+      <div class="mb-6">
+        <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <i class="fas fa-code mr-2"></i>Stella Wachira
+        </h3>
+        <p class="text-gray-400 mt-2">Software Developer & Creative Thinker</p>
+      </div>
+      
+      <div class="flex justify-center gap-6 mb-8">
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://twitter.com/yourhandle" target="_blank" class="social-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="mailto:stella@example.com" class="social-link">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-6">
+        <p class="text-gray-400">
+          &copy; 2025 Stella Wachira. All rights reserved. Made with <span class="text-red-500">♥</span> and lots of ☕
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="./script.js"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
-          colors: {
-            primary: '#f97316',
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+          animation: {
+            'spin-slow': 'spin 20s linear infinite',
           },
         },
       },
     };
   </script>
-<style>
 
-body{
-        font-family: Arial, Helvetica, sans-serif;
-    }
-  
-    nav{
-           box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-    [data-aos] {
-      opacity: 0;
-      transition-property: opacity, transform;
-    }
-  </style>
-
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white transition duration-300">
-
-   <nav class="px-6 py-4 bg-white text-gray-950 dark:bg-gray-800 dark:text-white shadow relative z-10"> 
-    <div class="flex justify-between items-center container mx-auto">
-      <div class="text-2xl font-bold dark:text-cyan-50">👩🏾‍💻 STELLA</div>
-
-
-      <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
-        ☰
-      </button>
-
-      <!-- Links -->
-      <div id="nav-links" class="hidden md:flex gap-4 items-center">
-        <a href="#" class="hover:text-primary">Home</a>
-        <a href="#" class="hover:text-primary">About</a>
-        <a href="#" class="hover:text-primary">Services</a>
-        <a href="#" class="hover:text-primary">Projects</a>
-        <a href="#" class="hover:text-primary dark:bg-yellow-700 p-3 rounded-lg">Let's Chat</a>
-
-        
-        <button
-          id="theme-toggle"
-          class="ml-4 p-2 rounded-full border border-gray-500 dark:border-gray-400"
-        >
-          🌓
-        </button>
-      </div>
-    </div>
-
-<!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden mt-4 space-y-3 px-6 hidden">
-      <a href="#" class="block hover:text-primary">Home</a>
-      <a href="#" class="block hover:text-primary">About</a>
-      <a href="#" class="block hover:text-primary">Services</a>
-      <a href="#" class="block hover:text-primary">Projects</a>
-      <a href="#" class="block hover:text-primary">Let's Chat</a>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="flex flex-col md:flex-row items-center justify-between px-6 py-20 container mx-auto">
-    <!-- Text Content -->
-    <div class="md:w-1/2 space-y-6 text-center md:text-left" data-aos="fade-right">
-      <p class="uppercase tracking-widest text-blue-900 dark:text-cyan-50 font-extralight text-2xl font-serif">Hi! I'm Stella Wachira</p>
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-       <span class="text-gray-900 dark:text-yellow-600">Software Developer.</span>
-      </h1>
-      <p class="text-gray-600 dark:text-gray-300 max-w-xl">
-        Designing and Developing user experiences that leap into electronic typesetting, remaining essentially unchanged.
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4" data-aos="fade-up">
-        <a href="#" class="bg-blue-500 hover:bg-blue-800 dark:bg-yellow-700 text-white px-6 py-3 rounded-lg font-medium">Hire me</a>
-        <a href="#" class="border border-gray-500 dark:border-white text-gray-800 dark:text-white px-6 py-3 rounded-lg hover:bg-gray-200 dark:hover:bg-white dark:hover:text-black">Download CV</a>
-      </div>
-    </div>
-
-    <div class="md:w-1/2 mt-12 md:mt-0" data-aos="zoom-in">
-  
-  <img
-    src="./IMAGES/3.gif"
-    alt="Portfolio Visual "
-    class="w-full max-w-md mx-auto drop-shadow-lg rounded-xl block "
-  />
-
-  </div>
-
-  </section>
-
-  
-
-  <!-- Footer -->
-  <footer class="text-center py-6 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400">
-    &copy; 2025 Stella Wachira. All rights reserved.
-  </footer>
-
-  <!-- AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-  </script>
-
-  <!-- Theme and Mobile Menu Toggle -->
-  <script>
-    const themeToggle = document.getElementById("theme-toggle");
-    const htmlElement = document.documentElement;
-
-    themeToggle?.addEventListener("click", () => {
-      htmlElement.classList.toggle("dark");
-    });
-
-    const menuBtn = document.getElementById("menu-btn");
-    const navLinks = document.getElementById("mobile-menu");
-
-    menuBtn?.addEventListener("click", () => {
-      navLinks.classList.toggle("hidden");
-    });
-  </script>
 </body>
 </html>
