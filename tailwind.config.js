@@ -1,7 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
-  content: ["./*.html"], // This is enough if all HTML is in root
+  content: [
+    "./index.html",
+    "./script.js",
+    "./users/**/*.php",
+    "./*.html",
+    "./*.php"
+  ],
   theme: {
     extend: {},
   },
