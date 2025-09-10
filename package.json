@@ -4,8 +4,9 @@
   "description": "",
   "main": "script.js",
   "scripts": {
+    
     "tailwind:init": "tailwindcss init -p",
-     "build": "tailwindcss -i ./src/input.css -o ./dist/output.css"
+  "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css"
   },
   "repository": {
     "type": "git",
