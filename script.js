@@ -1,4 +1,14 @@
-// Enhanced Portfolio JavaScript
+// Set dark mode as default IMMEDIATELY (before DOM loads)
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    // Default to dark mode if no preference is saved
+    if (!savedTheme) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+    } else if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+    }
+})();
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -23,18 +33,16 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavbarScroll();
 });
 
-// Theme Toggle Functionality
+// Theme Toggle Functionality (UPDATED)
 function initThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle');
     const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
     const htmlElement = document.documentElement;
 
-    // Check for saved theme or default to light mode
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        htmlElement.classList.toggle('dark', savedTheme === 'dark');
-        updateThemeIcons(savedTheme === 'dark');
-    }
+    // Check for saved theme or default to DARK mode
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    htmlElement.classList.toggle('dark', savedTheme === 'dark');
+    updateThemeIcons(savedTheme === 'dark');
 
     // Desktop theme toggle
     if (themeToggle) {
